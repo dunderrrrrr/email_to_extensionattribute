@@ -37,7 +37,7 @@ else {
 	#check if ext4 is empty
 	$ext4check = Get-ADUser -Identity $user -Properties *
 	$ext4 = $ext4check.extensionattribute4
-	if ($ext6 -eq $null) {
+	if ($ext4 -eq $null) {
 	    #set passwd for extensionAttribute4
 	    $passwd = Get-Random -Maximum 99999999 -Minimum 10000000
 	    Set-ADUser –Identity $user -add @{"extensionattribute4"="$passwd"}
